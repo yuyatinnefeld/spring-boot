@@ -31,6 +31,11 @@ docker run -it -p $PORT:$PORT $IMAGE_NAME
 ### Step 3: Access the Application
 Open your web browser and navigate to http://localhost:8080. You should see the message "Hello, World!" displayed.
 
+```bash
+$ curl http://localhost:8080
+Greetings from Spring Boot!
+```
+
 ### Step 4: Access the Container Shell
 ```bash
 docker ps
