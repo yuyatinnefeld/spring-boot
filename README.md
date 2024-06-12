@@ -18,7 +18,7 @@ First, you need to build the Docker image for the application. Make sure you are
 
 ```bash
 export IMAGE_NAME="yuyatinnefeld/spring-boot"
-docker build -t $IMAGE_NAME .
+docker build -t $IMAGE_NAME . -f dockerfiles/dev.Dockerfile
 ```
 
 ### Step 2: Run the Docker Container
