@@ -43,3 +43,11 @@ docker ps
 export CONTAINER_ID=<your_container_id>
 docker exec -it $CONTAINER_ID bash
 ```
+
+
+### Step 5: Check the Test Results
+![Springboot Test Results](/images/test-results.png)
+
+```bash
+docker cp $CONTAINER_ID:/app/tests/test test-results
+```
