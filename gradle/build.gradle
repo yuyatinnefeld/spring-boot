@@ -26,3 +26,16 @@ test {
         junitXml.destination = file("build/reports/tests/test-results.xml")
     }
 }
+
+tasks.register("task1") {
+    doLast {
+        println("this is task1")
+    }
+}
+
+tasks.register("task2") {
+    dependsOn("task1")
+    doLast {
+        println("this is task2")
+    }
+}
