@@ -10,5 +10,6 @@ RUN gradle build --no-daemon
 FROM openjdk:11-jre-slim
 WORKDIR /app
 COPY --from=builder /app/build/libs/my-spring-boot-app-0.1.1.jar app.jar
+COPY --from=builder /app/build/reports/tests tests
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "app.jar"]

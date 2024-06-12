@@ -21,4 +21,8 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    reports {
+        junitXml.enabled = true
+        junitXml.destination = file("build/reports/tests/test-results.xml")
+    }
 }
