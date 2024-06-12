@@ -44,10 +44,44 @@ export CONTAINER_ID=<your_container_id>
 docker exec -it $CONTAINER_ID bash
 ```
 
-
 ### Step 5: Check the Test Results
 ![Springboot Test Results](/images/test-results.png)
 
 ```bash
 docker cp $CONTAINER_ID:/app/tests/test test-results
 ```
+
+### Use Gradle
+
+#### Run Gradle Container
+```bash
+export PORT=8080
+export IMAGE_NAME=yuyatinnefeld/gradle
+docker build -t $IMAGE_NAME . -f dockerfiles/gradle.Dockerfile
+docker run -p $PORT:$PORT -d $IMAGE_NAME tail -f /dev/null
+docker exec -it $CONTAINER_ID bash
+```
+#### Gradle Commands
+
+```bash
+# check gradle version
+root@2171e3209db4:/app# gradle -v
+
+# execute a customized task
+root@2171e3209db4:/app# gradle task2
+
+# install gradle wrapper to be able to use 'gradlew'
+root@2171e3209db4:/app# gradle wrapper
+
+# run test
+root@2171e3209db4:/app# gradlew test
+
+# run app
+root@2171e3209db4:/app# ./gradlew clean build bootRun
+
+# run test
+root@2171e3209db4:/app# ./gradlew task2
+```
+##### Gradle Wrapper (gradlew)
+`gradlew` is a script that allows you to run Gradle builds with a specific version of Gradle, ensuring consistency across different environments. It helps avoid issues related to different Gradle versions installed on different machines.
+
