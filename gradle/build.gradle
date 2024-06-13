@@ -39,3 +39,10 @@ tasks.register("task2") {
         println("this is task2")
     }
 }
+
+tasks.register("task3") {
+    dependsOn tasks.task2
+    doLast {
+        println("this is task3")
+    }
+}
