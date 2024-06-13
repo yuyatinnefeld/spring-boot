@@ -51,7 +51,7 @@ docker exec -it $CONTAINER_ID bash
 docker cp $CONTAINER_ID:/app/tests/test test-results
 ```
 
-### Use Gradle
+### Use/Update Gradle
 
 #### Run Gradle Container
 ```bash
@@ -68,13 +68,13 @@ docker exec -it $CONTAINER_ID bash
 root@2171e3209db4:/app# gradle -v
 
 # execute a customized task
-root@2171e3209db4:/app# gradle task2
+root@2171e3209db4:/app# gradle task3
 
 # install gradle wrapper to be able to use 'gradlew'
 root@2171e3209db4:/app# gradle wrapper
 
 # run test
-root@2171e3209db4:/app# gradlew test
+root@2171e3209db4:/app# ./gradlew test
 
 # run app
 root@2171e3209db4:/app# ./gradlew clean build bootRun
