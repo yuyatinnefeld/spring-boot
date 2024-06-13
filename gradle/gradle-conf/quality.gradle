@@ -1,0 +1,15 @@
+// Checkstyle configuration
+checkstyle {
+    toolVersion = "8.42"
+    configFile = file("${rootDir}/checkstyle/checkstyle.xml")
+    ignoreFailures = false
+    showViolations = true
+    sourceSets = [sourceSets.main]
+}
+
+// Task to run all quality checks
+task checkQuality(dependsOn: ['checkstyleMain']) {
+    doLast {
+        println('✅ Runs All Quality Check ✅')
+    }
+}

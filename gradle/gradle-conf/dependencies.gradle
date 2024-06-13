@@ -3,4 +3,5 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
+    checkstyle 'com.puppycrawl.tools:checkstyle:8.42'
 }
