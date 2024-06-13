@@ -4,9 +4,9 @@ plugins {
     id 'java'
 }
 
-group = 'com.ytinne'
-version = '0.1.1'
-sourceCompatibility = '11'
+group = System.getProperty('group')
+version = System.getProperty('version')
+sourceCompatibility = System.getProperty('sourceCompatibility')
 
 repositories {
     mavenCentral()
@@ -43,6 +43,6 @@ tasks.register("task2") {
 tasks.register("task3") {
     dependsOn tasks.task2
     doLast {
-        println("this is task3")
+        println System.getProperty('taskMessage')
     }
 }
