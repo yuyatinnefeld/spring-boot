@@ -12,37 +12,7 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
-}
-
-test {
-    useJUnitPlatform()
-    reports {
-        junitXml.enabled = true
-        junitXml.destination = file("build/reports/tests/test-results.xml")
-    }
-}
-
-tasks.register("task1") {
-    doLast {
-        println("this is task1")
-    }
-}
-
-tasks.register("task2") {
-    dependsOn("task1")
-    doLast {
-        println("this is task2")
-    }
-}
-
-tasks.register("task3") {
-    dependsOn tasks.task2
-    doLast {
-        println System.getProperty('taskMessage')
-    }
-}
+// Apply configuration files
+apply from: 'gradle-conf/dependencies.gradle'
+apply from: 'gradle-conf/tasks.gradle'
+apply from: 'gradle-conf/test-config.gradle'

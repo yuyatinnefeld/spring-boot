@@ -1,0 +1,19 @@
+tasks.register("task1") {
+    doLast {
+        println("this is task1")
+    }
+}
+
+tasks.register("task2") {
+    dependsOn("task1")
+    doLast {
+        println("this is task2")
+    }
+}
+
+tasks.register("task3") {
+    dependsOn tasks.task2
+    doLast {
+        println System.getProperty('taskMessage', 'Default task message')
+    }
+}
