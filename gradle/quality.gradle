@@ -1,7 +1,7 @@
 // Checkstyle configuration
 checkstyle {
     toolVersion = "8.42"
-    configFile = file("${rootDir}/checkstyle/checkstyle.xml")
+    configFile = file("${rootDir}/gradle/checkstyle/checkstyle.xml")
     ignoreFailures = false
     showViolations = true
     sourceSets = [sourceSets.main]
