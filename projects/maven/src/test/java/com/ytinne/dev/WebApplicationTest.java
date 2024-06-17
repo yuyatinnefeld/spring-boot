@@ -1,10 +1,11 @@
-package com.example.demo;
+package com.ytinne.dev;
 
 import org.junit.jupiter.api.Test;
+
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class TestingWebApplicationTests {
 
 	@Test
 	void contextLoads() {

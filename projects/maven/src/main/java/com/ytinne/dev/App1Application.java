@@ -1,4 +1,4 @@
-package com.maven_ytinne.dev;
+package com.ytinne.dev;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

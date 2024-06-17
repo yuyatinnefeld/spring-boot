@@ -5,7 +5,7 @@ First, you need to build the Docker image for the application. Make sure you are
 
 ```bash
 export IMAGE_NAME="yuyatinnefeld/spring-boot-maven"
-docker build -t $IMAGE_NAME . -f dockerfiles/dev.Dockerfile
+docker build -t $IMAGE_NAME . -f dockerfiles/spring.maven.Dockerfile
 ```
 
 ### Step 2: Run the Docker Container
@@ -21,6 +21,9 @@ Open your web browser and navigate to http://localhost:8080. You should see the 
 ```bash
 $ curl http://localhost:8080
 Greetings from Spring Boot!
+
+$ curl http://localhost:8080/build
+Build with Maven
 ```
 
 ### Step 4: Access the Container Shell
@@ -31,20 +34,13 @@ export CONTAINER_ID=<your_container_id>
 docker exec -it $CONTAINER_ID bash
 ```
 
-### Step 5: Check the Test Results
-![Springboot Test Results](/images/test-results.png)
+## Use/Update Maven
 
-```bash
-docker cp $CONTAINER_ID:/app/tests/test test-results
-```
-
-## Use/Update Gradle
-
-#### Run Gradle Container
+#### Run Maven Container
 ```bash
 export PORT=8080
-export IMAGE_NAME=yuyatinnefeld/gradle
-docker build -t $IMAGE_NAME . -f dockerfiles/gradle.Dockerfile
+export IMAGE_NAME="yuyatinnefeld/gradle"
+docker build -t $IMAGE_NAME . -f dockerfiles/maven.Dockerfile
 docker run -p $PORT:$PORT -d $IMAGE_NAME tail -f /dev/null
 docker exec -it $CONTAINER_ID bash
 ```
