@@ -35,7 +35,7 @@ docker exec -it $CONTAINER_ID bash
 ![Springboot Test Results](/images/test-results.png)
 
 ```bash
-docker cp $CONTAINER_ID:/app/tests/test test-results
+docker cp $CONTAINER_ID:/code/tests/test projects/gradle/test-results
 ```
 
 ## Use/Update Gradle
