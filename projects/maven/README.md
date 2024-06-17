@@ -39,32 +39,33 @@ docker exec -it $CONTAINER_ID bash
 #### Run Maven Container
 ```bash
 export PORT=8080
-export IMAGE_NAME="yuyatinnefeld/gradle"
+export IMAGE_NAME="yuyatinnefeld/maven"
 docker build -t $IMAGE_NAME . -f dockerfiles/maven.Dockerfile
 docker run -p $PORT:$PORT -d $IMAGE_NAME tail -f /dev/null
 docker exec -it $CONTAINER_ID bash
 ```
-#### Gradle Commands
+#### Maven Commands
 
 ```bash
-# check gradle version
-root@2171e3209db4:/app# gradle -v
+# check maven version
+root@2171e3209db4:/app# mvn -v
 
-# execute a customized task
-root@2171e3209db4:/app# gradle task3
+# execute tests
+root@2171e3209db4:/app# mvn test -X
 
-# install gradle wrapper to be able to use 'gradlew'
-root@2171e3209db4:/app# gradle wrapper
+# validate the project is correct
+mvn validate
 
-# run test
-root@2171e3209db4:/app# ./gradlew test
+# build a project (target dir will be created)
+mvn compile
 
-# run app
-root@2171e3209db4:/app# ./gradlew clean build bootRun
+# delete a project (target dir will be deleted)
+mvn clean
 
-# run test
-root@2171e3209db4:/app# ./gradlew task2
+# build and pacakge the project (JAR file - e.g. dev-0.0.1-SNAPSHOT.jar will be createdr created)
+mvn package
+
+# run the spring boot application
+mvn spring-boot:run
 ```
-##### Gradle Wrapper (gradlew)
-`gradlew` is a script that allows you to run Gradle builds with a specific version of Gradle, ensuring consistency across different environments. It helps avoid issues related to different Gradle versions installed on different machines.
 
