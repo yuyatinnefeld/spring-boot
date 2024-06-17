@@ -1,4 +1,48 @@
+# Ignore Gradle wrapper files
+gradle/wrapper/
+gradle-wrapper.jar
+
+# Ignore Gradle caches and other temporary files
 .gradle
-.idea
-tmp
-vendor/
+.gradle/
+
+# Ignore Maven wrapper files
+.mvn/wrapper/
+mvnw
+mvnw.cmd
+
+# Ignore Maven build outputs
+/target
+/target/
+
+# Ignore Maven local repository
+.m2
+.m2/
+
+# Ignore project-specific files
+**/.idea
+**/.settings
+**/.project
+**/.classpath
+**/.factorypath
+
+# Ignore IntelliJ IDEA project files
+*.iml
+.idea/
+
+# Ignore Eclipse project files
+*.class
+*.jar
+*.war
+*.ear
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
