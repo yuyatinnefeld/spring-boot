@@ -14,10 +14,10 @@ allprojects {
         mavenCentral()
     }
     // Apply configuration files
-    apply from: 'gradle/dependencies.gradle'
-    apply from: 'gradle/tasks.gradle'
-    apply from: 'gradle/test-config.gradle'
-    apply from: 'gradle/quality.gradle'
+    apply from: 'conf/dependencies.gradle'
+    apply from: 'conf/tasks.gradle'
+    apply from: 'conf/test-config.gradle'
+    apply from: 'conf/quality.gradle'
 }
 
 

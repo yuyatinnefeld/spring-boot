@@ -13,7 +13,12 @@ public class App1Controller {
   
     @GetMapping("/app1")
     public String callApp1Service() {
-		return "Greetings from App1 !";
+		return "Greetings from App1";
+    }
+
+    @GetMapping("/build")
+    public String buildInfo() {
+		return "Build with Gradle";
     }
 
 }
