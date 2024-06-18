@@ -1,4 +1,4 @@
-s## Setup and Start with Gradle
+## Setup and Start with Gradle
 
 ### Step 1: Build the Docker Image
 First, you need to build the Docker image for the application. Make sure you are in the root directory of the project.
