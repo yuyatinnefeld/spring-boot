@@ -5,7 +5,7 @@ First, you need to build the Docker image for the application. Make sure you are
 
 ```bash
 export IMAGE_NAME="yuyatinnefeld/spring-boot-gradle"
-docker build -t $IMAGE_NAME . -f dockerfiles/dev.Dockerfile
+docker build -t $IMAGE_NAME . -f dockerfiles/spring.gradle.Dockerfile
 ```
 
 ### Step 2: Run the Docker Container
